@@ -15,9 +15,11 @@ style: |
   }
   p {
     font-size: 1.5rem;
+    font-weight: 200;
     }
   li {
     font-size: 1.5rem;
+    font-weight: 200;
     color: var(--text);
   }
 ---
