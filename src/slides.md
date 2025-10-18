@@ -1,6 +1,7 @@
 ---
 marp: true
 theme: rose-pine
+paginate: true
 size: 16:9
 backgroundImage: url('../assets/dls_blue.png')
 style: |
@@ -33,8 +34,14 @@ style: |
   }
   footer {
     font-size: 1rem;
+    font-style: italic;
+    font-weight: 100;
     color: var(--text);
-    left: 80px;
+    left: 100px;
+  }
+  section::after {
+    left: 40px;
+    color: var(--text);
   }
 ---
 # Intro Slide 
@@ -55,6 +62,18 @@ It helps us keep track of:
 ---
 <!--- make pictures wide --->
 ![bg w:1268](../assets/wide_picture.jpg)
+
+---
+
+* some things need a reference
+
+ <!-- _footer: Keeble et. al Appl. Phys. Lett. 102, 092903 (2013) --> 
+
+---
+<style scoped>
+  p { text-align: center; }
+</style>
+and sometimes you want to temporarily modify something
 
 ---
 ![bg opacity](../assets/gradient.jpeg)
