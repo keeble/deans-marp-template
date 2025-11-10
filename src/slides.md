@@ -38,7 +38,14 @@ style: |
     font-weight: 100;
     color: var(--text);
     left: 100px;
-  }
+  },
+  table, tbody, tr, {
+    background-color: rgba(34, 41, 68, 1.0) !important;
+    color: var(--text);
+  },
+  th {
+    background-color: rgba(57, 69, 115, 1.0) !important; 
+  },
   section::after {
     left: 40px;
     color: var(--text);
@@ -70,6 +77,18 @@ It helps us keep track of:
  <!-- _footer: Keeble et. al Appl. Phys. Lett. 102, 092903 (2013) --> 
 
 ---
+
+## and some things need to be in a table
+
+Fruit | Colour | Amount | Cost
+-----|------|:-----:|------:
+Banana | Yellow | 4 | £1.00
+Apple | Red | 2 | £0.60
+Orange | Orange | 10 | £2.50
+Coconut | Brown | 1 | £1.50
+
+---
+
 <style scoped>
   p { text-align: center; }
 </style>
