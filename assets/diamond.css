@@ -1,7 +1,11 @@
+/* @theme: diamond */
+/* @theme diamond */
+/* @title: Diamond */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap');
 
 :root {
   --diamond-primary: #002f6c; /* deep navy */
+  --diamond-header: #222943; /* very deep navy */
   --diamond-accent: #ffd100; /* gold */
   --diamond-text: #17202a; /* dark text */
   --diamond-muted: #6b7280;
@@ -19,33 +23,30 @@ body, section {
 
 /* Headings */
 h1, h2, h3 {
-  color: var(--diamond-primary);
+  color: var(--diamond-header) !important;
   font-weight: 500;
 }
 
 h1 {
   border-bottom: 4px solid var(--diamond-accent);
   padding-bottom: 0.4rem;
-}
-
-/* moved from slides.md: sizes and weights */
-h1 {
-  font-size: 3.7rem;
+  font-size: 6.0rem !important;
   font-weight: 400;
 }
 
+
 h2 {
-  font-size: 2.2rem;
+  font-size: 4.4rem !important;
   font-weight: 300;
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 3.6rem !important;
   font-weight: 300;
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 200;
 }
 
@@ -54,7 +55,7 @@ strong {
 }
 
 li {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 200;
   color: var(--text);
 }
@@ -64,20 +65,30 @@ img {
 }
 
 footer {
-  font-size: 1rem;
+  font-size: 1.8rem !important;
   font-style: italic;
-  font-weight: 100;
+  font-weight: 300;
   color: var(--text);
-  left: 100px;
+  text-align: center !important;
+  bottom: 26px !important;
+  width: 100%;
+  margin: auto 0;
 }
 
 table, tbody, tr {
-  background-color: rgba(34, 41, 68, 1.0) !important;
-  color: var(--text);
+  background-color: #CCCDCF !important;
+  color: var(--diamond-text) !important;
+}
+
+tr {
+  border: solid;
+  border-color: rgba(255,255,255);
+  border-width: 2px 0px;
 }
 
 th {
-  background-color: rgba(57, 69, 115, 1.0) !important;
+  background-color: var(--diamond-header) !important;
+  color: var(--diamond-surface) !important;
 }
 
 section::after {
@@ -104,11 +115,11 @@ table {
 
 th, td {
   padding: 0.75rem 1rem;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 5px solid rgba(1,1,1);
 }
 
 tr:nth-child(even) td {
-  background: #fbfcfd;
+  background: #E7E8E9;
 }
 
 /* Utility classes for emphasis similar to site styling */
@@ -117,7 +128,33 @@ tr:nth-child(even) td {
   font-weight: 600;
 }
 
-/* Keep table/section contrast suitable for slides */
+/* Position pagination (page number) bottom-right and use normal text colour */
 section::after {
   color: var(--diamond-muted);
+  left: auto !important;
+  right: 100px !important;
+  bottom: 29px !important;
+  color: var(--text) !important;
+}
+
+/* Apply Outfit font and tested heading sizes across main typographic elements */
+/* These use stronger specificity/important to ensure preview reflects theme changes */
+body, section, h1, h2, h3, p, li, footer, table, th, td {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+p, li {
+  font-size: 2.5rem !important;
+}
+
+section.lower-heading {
+  padding-top: 28% !important;
+  box-sizing: border-box;
+}
+
+/* Keep headings aligned after moving container */
+section.lower-heading h1,
+section.lower-heading h2,
+section.lower-heading h3 {
+  margin-top: 0 !important;
 }
