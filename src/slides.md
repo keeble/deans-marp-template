@@ -15,6 +15,8 @@ Dean Keeble
 Somewhere, sometime
 
 ---
+![bg](../assets/dls.png)
+
 ## List of things
 Normal markdown rules apply:
 
@@ -25,7 +27,6 @@ It helps us keep track of:
 - and more! :o: :smiley: :white_check_mark:
 
 ---
-
 * some things need a reference
 
  <!-- _footer: Keeble et. al Appl. Phys. Lett. 102, 092903 (2013) --> 
@@ -51,5 +52,5 @@ you want to temporarily
 modify something
 
 ---
-# fitting long lines to page width
+ fitting long lines to page width
 #### <!--fit--> https://www.diamond.ac.uk/Instruments/Crystallography/I19/Manual/EH1.html
