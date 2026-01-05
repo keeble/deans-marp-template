@@ -1,0 +1,38 @@
+name: Render Marp slides and publish
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Render Marp slides to HTML
+        run: |
+          npm install -g @marp-team/marp-cli
+          mkdir -p public
+          npx @marp-team/marp-cli@latest src/slides.md -o public/index.html --html --allow-local-files --theme ./assets/diamond.css
+          # Copy local assets so backgrounds/fonts/images are available
+          cp -R assets public/ || true
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          # optionally set the branch name (default is gh-pages)
+          publish_branch: gh-pages

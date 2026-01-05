@@ -29,3 +29,13 @@ p {
 }
 </style>
 ```
+
+## Publishing (GitHub Pages on release) [not production, github.io rendering is not right]
+
+This template includes a GitHub Actions workflow that renders the presentation to HTML and publishes it to GitHub Pages whenever a repository *release* is published.
+
+How it works:
+
+- On `release` the action installs `@marp-team/marp-cli`, renders `src/slides.md` to `public/index.html`, copies the `assets/` folder into `public/`, and deploys the `public` directory to GitHub Pages branch `gh-pages`, which you can then enable through the repo's settings. 
+
+- Currently the path is incorrect because the paths to the assets are hard-coded to be `../assets/*` and they need to be `./assets/*` and I feel like sed is not the correct way to do this
