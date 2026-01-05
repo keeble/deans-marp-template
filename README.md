@@ -29,39 +29,13 @@ p {
 }
 </style>
 ```
-````
-## Publishing (GitHub Pages on release)
+
+## Publishing (GitHub Pages on release) [not production, github.io rendering is not right]
 
 This template includes a GitHub Actions workflow that renders the presentation to HTML and publishes it to GitHub Pages whenever a repository *release* is published.
 
 How it works:
 
-- On `release` (type `published`) the action installs `@marp-team/marp-cli`, renders `src/slides.md` to `public/index.html`, copies the `assets/` folder into `public/`, and deploys the `public` directory to GitHub Pages.
+- On `release` the action installs `@marp-team/marp-cli`, renders `src/slides.md` to `public/index.html`, copies the `assets/` folder into `public/`, and deploys the `public` directory to GitHub Pages branch `gh-pages`, which you can then enable through the repo's settings. 
 
-Local preview and testing:
-
-1. Install the Marp CLI:
-
-```bash
-npm install -g @marp-team/marp-cli
-```
-
-2. Render locally:
-
-```bash
-npx @marp-team/marp-cli@latest src/slides.md -o public/index.html --html --allow-local-files --theme ./assets/diamond.css
-cp -R assets public/
-```
-
-3. Open `public/index.html` in a browser to preview the exported site.
-
-Notes:
-
-- The workflow runs only on GitHub Releases; create a new Release (Draft → Publish release) to trigger it.
-- The action uploads the `public` directory as the Pages artifact and the Pages deploy action will create/replace the Pages deployment for the repository.
-
-Files added:
-
-- `.github/workflows/render-release.yml` — the release-triggered workflow that builds and publishes the site.
-
-````
+- Currently the path is incorrect because the paths to the assets are hard-coded to be `../assets/*` and they need to be `./assets/*` and I feel like sed is not the correct way to do this
