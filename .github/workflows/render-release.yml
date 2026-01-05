@@ -1,0 +1,38 @@
+name: Render Marp slides and publish
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Render Marp slides to HTML
+        run: |
+          npm install -g @marp-team/marp-cli
+          mkdir -p public
+          npx @marp-team/marp-cli@latest src/slides.md -o public/index.html --html --allow-local-files --theme ./assets/diamond.css
+          # Copy local assets so backgrounds/fonts/images are available
+          cp -R assets public/ || true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
