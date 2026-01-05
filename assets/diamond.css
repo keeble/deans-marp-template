@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --diamond-primary: #002f6c; /* deep navy */
+  --diamond-accent: #ffd100; /* gold */
+  --diamond-text: #17202a; /* dark text */
+  --diamond-muted: #6b7280;
+  --diamond-surface: #f6f7f9;
+  --diamond-font: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --text: var(--diamond-text);
+}
+
+/* Base for Marp slides (sections are the slides) */
+body, section {
+  font-family: var(--diamond-font);
+  color: var(--diamond-text);
+  background: var(--diamond-surface);
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--diamond-primary);
+  font-weight: 500;
+}
+
+h1 {
+  border-bottom: 4px solid var(--diamond-accent);
+  padding-bottom: 0.4rem;
+}
+
+/* moved from slides.md: sizes and weights */
+h1 {
+  font-size: 3.7rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+strong {
+  font-weight: 600;
+}
+
+li {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: var(--text);
+}
+
+img {
+  background-color: transparent!important;
+}
+
+footer {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 100;
+  color: var(--text);
+  left: 100px;
+}
+
+table, tbody, tr {
+  background-color: rgba(34, 41, 68, 1.0) !important;
+  color: var(--text);
+}
+
+th {
+  background-color: rgba(57, 69, 115, 1.0) !important;
+}
+
+section::after {
+  left: 40px;
+  color: var(--text);
+}
+
+/* Links & misc from existing file */
+a {
+  color: var(--diamond-primary);
+  text-decoration: none;
+  border-bottom: 2px dotted rgba(0,0,0,0.06);
+}
+
+a:hover {
+  color: var(--diamond-accent);
+}
+
+/* Tables - header in navy, alternating rows fallback */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+tr:nth-child(even) td {
+  background: #fbfcfd;
+}
+
+/* Utility classes for emphasis similar to site styling */
+.diamond-accent {
+  color: var(--diamond-accent);
+  font-weight: 600;
+}
+
+/* Keep table/section contrast suitable for slides */
+section::after {
+  color: var(--diamond-muted);
+}
