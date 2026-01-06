@@ -2,19 +2,19 @@
 marp: true
 paginate: true
 size: 16:9
-backgroundImage: url('assets/default.png')
+backgroundImage: url('./assets/default.png')
 style: |
-  @import url('assets/diamond.css');
+  @import url('./assets/diamond.css');
 ---
 <!-- _class: lower-heading -->
-![bg](assets/h1.png)
+![bg](./assets/h1.png)
 
 # Intro Slide 
 Dean Keeble
 Somewhere, sometime
 
 ---
-![bg](assets/dls.png)
+![bg](./assets/dls.png)
 
 ## List of things
 Normal markdown rules apply:

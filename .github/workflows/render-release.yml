@@ -25,7 +25,7 @@ jobs:
         run: |
           npm install -g @marp-team/marp-cli
           mkdir -p public
-          npx @marp-team/marp-cli@latest -o public/index.html --html --allow-local-files --theme-set ./assets/diamond.css -- src/slides.md 
+          npx @marp-team/marp-cli@latest -o public/index.html --html --allow-local-files --theme-set ./assets/diamond.css -- slides.md 
           # Copy local assets so backgrounds/fonts/images are available
           cp -R assets public/ || true
 
