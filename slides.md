@@ -5,6 +5,19 @@ size: 16:9
 backgroundImage: url('./assets/default.png')
 style: |
   @import url('./assets/diamond.css');
+  img[alt~='masked'] {
+    mask-image: url('./assets/dls-mask.png');
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: 100%, 0%;
+    position: absolute;
+    width: 1200px;
+
+    /* Place to right-bottom */
+    right: 0px;
+    top: 0px;
+    }
+
 ---
 <!-- _class: lower-heading -->
 ![bg](./assets/h1.png)
@@ -52,6 +65,11 @@ Coconut | Brown | 1 | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; £1.50
 ...and sometimes
 you want to temporarily
 modify something
+
+---
+
+![masked](./assets/i15-1.png)
+sometimes it's fun to abuse css
 
 ---
  fitting long lines to page width
