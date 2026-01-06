@@ -2,20 +2,19 @@
 marp: true
 paginate: true
 size: 16:9
-backgroundImage: url('../assets/default.png')
+backgroundImage: url('./assets/default.png')
 style: |
-  @import url('../assets/diamond.css');
-
+  @import url('./assets/diamond.css');
 ---
 <!-- _class: lower-heading -->
-![bg](../assets/h1.png)
+![bg](./assets/h1.png)
 
 # Intro Slide 
 Dean Keeble
 Somewhere, sometime
 
 ---
-![bg](../assets/dls.png)
+![bg](./assets/dls.png)
 
 ## List of things
 Normal markdown rules apply:
@@ -27,9 +26,12 @@ It helps us keep track of:
 - and more! :o: :smiley: :white_check_mark:
 
 ---
-* some things need a reference
+- some things need a reference†
+- and sometimes you need maths inline $x=y^2$ or in a block:
+$$\begin{aligned}\mathbf{Q} &= \mathbf{k}_f - \mathbf{k}_i \\
+Q &= \vert\mathbf{Q}\vert\end{aligned} $$
 
- <!-- _footer: Keeble et. al Appl. Phys. Lett. 102, 092903 (2013) --> 
+ <!-- _footer: †Keeble et. al Appl. Phys. Lett. 102, 092903 (2013) --> 
 
 ---
 
