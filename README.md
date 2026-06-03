@@ -19,3 +19,10 @@ Why it only _kinda_ works:
 ```
 npx @marp-team/marp-cli@latest -o public/index.html --html --allow-local-files --theme-set ./assets/diamond.css -- slides.md
 ```
+## Rendering locally
+
+If one exports the html from vscode, you will not be able to render local files, and the clever masking won't work; this is because of _something something safety_. To fix you need to host the html. Export the slides to the root of the repo, and run
+```
+python -m http.server
+```
+you can now view the slides at `localhost:8000`. 
